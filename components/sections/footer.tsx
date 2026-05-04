@@ -51,11 +51,10 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="GrowNest"
-                width={32}
+                width={128}
                 height={32}
                 className="h-8 w-auto opacity-90"
               />
-              <span className="font-semibold text-white">GrowNest</span>
             </div>
             <p className="text-sm leading-relaxed text-white/40 max-w-50">
               Africa&apos;s savings and financial growth platform.

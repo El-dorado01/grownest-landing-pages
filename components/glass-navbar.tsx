@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -47,40 +48,37 @@ export function GlassNavbar() {
       >
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 shrink-0">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="GrowNest"
-              width={36}
+              width={144}
               height={36}
               className="h-9 w-auto"
             />
-            <span className="font-semibold text-[15px] text-foreground hidden sm:block">
-              GrowNest
-            </span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
+            <Link
               href="#download"
               className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
             >
               Sign in
-            </a>
+            </Link>
             <a
               href="#download"
               className="inline-flex items-center gap-1.5 rounded-full bg-[#D4A017] px-5 py-2 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#B49233] active:scale-95 shadow-[0_4px_0_rgba(212,160,23,0.35)]"
@@ -113,30 +111,30 @@ export function GlassNavbar() {
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="px-4 py-2.5 rounded-xl text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/40 transition-colors duration-150"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="mt-2 pt-2 border-t border-white/30 flex flex-col gap-2">
-                <a
+                <Link
                   href="#download"
                   onClick={() => setMobileOpen(false)}
                   className="px-4 py-2.5 rounded-xl text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/40 transition-colors duration-150"
                 >
                   Sign in
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#download"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center rounded-full bg-[#D4A017] py-2.5 text-sm font-semibold text-white hover:bg-[#B49233] transition-colors duration-150"
                 >
                   Get started
-                </a>
+                </Link>
               </div>
             </nav>
           </motion.div>
