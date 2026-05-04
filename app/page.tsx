@@ -1,19 +1,25 @@
-import { Button } from "@/components/ui/button"
+import { GlassNavbar } from "@/components/glass-navbar"
+import { HeroSection } from "@/components/sections/hero-section"
+import { ProductsSection } from "@/components/sections/products-section"
+import { AppPreviewSection } from "@/components/sections/app-preview-section"
+import { NestBasketsSection } from "@/components/sections/nestbaskets-section"
+import { StatsSection } from "@/components/sections/stats-section"
+import { TrustSection } from "@/components/sections/trust-section"
+import { DownloadCtaSection } from "@/components/sections/download-cta-section"
+import { Footer } from "@/components/sections/footer"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <main className="min-h-screen overflow-x-hidden bg-[#FFF8E1]">
+      <GlassNavbar />
+      <HeroSection />
+      <ProductsSection />
+      <AppPreviewSection />
+      <NestBasketsSection />
+      <StatsSection />
+      <TrustSection />
+      <DownloadCtaSection />
+      <Footer />
+    </main>
   )
 }
