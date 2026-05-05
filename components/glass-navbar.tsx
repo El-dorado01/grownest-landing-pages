@@ -40,7 +40,7 @@ export function GlassNavbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
         className={cn(
-          "w-full max-w-5xl rounded-[9999px] px-5 py-3 transition-all duration-300",
+          "w-full max-w-5xl rounded-pill px-5 py-3 transition-all duration-300",
           scrolled
             ? "glass shadow-[0_4px_24px_rgba(0,0,0,0.10)]"
             : "bg-transparent"
@@ -90,7 +90,7 @@ export function GlassNavbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-foreground"
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-white bg-[#D4A017]"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -107,7 +107,12 @@ export function GlassNavbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[72px] left-4 right-4 rounded-2xl glass shadow-[0_8px_32px_rgba(0,0,0,0.12)] p-4"
+            className="absolute top-22.5 left-4 right-4 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.14)] p-4 border border-white/40"
+            style={{
+              backdropFilter: "blur(24px) saturate(180%)",
+              WebkitBackdropFilter: "blur(24px) saturate(180%)",
+              backgroundColor: "rgba(255, 255, 255, 0.92)",
+            }}
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (

@@ -36,7 +36,7 @@ export function FeatureCard({
       transition={{ delay }}
       whileHover={{ y: -8, boxShadow: "0 16px 40px rgba(212,160,23,0.15)" }}
       className={cn(
-        "group relative flex flex-col rounded-2xl bg-white border border-[rgba(212,160,23,0.10)] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-shadow duration-300 overflow-hidden cursor-pointer will-change-transform",
+        "group relative flex flex-col rounded-2xl bg-card border border-[rgba(212,160,23,0.10)] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-shadow duration-300 overflow-hidden cursor-pointer will-change-transform",
         className
       )}
     >
@@ -55,8 +55,8 @@ export function FeatureCard({
       </div>
 
       {/* Text */}
-      <h3 className="mb-2 text-base font-bold text-[#1A1A1A] leading-snug">{title}</h3>
-      <p className="text-sm text-[#757575] leading-relaxed flex-1">{description}</p>
+      <h3 className="mb-2 text-base font-bold text-foreground leading-snug">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed flex-1">{description}</p>
 
       {/* App screenshot */}
       {image && (

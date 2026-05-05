@@ -50,7 +50,7 @@ export function SectionHeading({
 
       <h2
         className={cn(
-          "text-3xl font-bold leading-tight text-[#1A1A1A] sm:text-4xl",
+          "text-3xl font-bold leading-tight text-foreground sm:text-4xl",
           titleClassName
         )}
       >
@@ -59,7 +59,7 @@ export function SectionHeading({
 
       {description && (
         <p className={cn(
-          "text-[15px] leading-relaxed text-[#757575]",
+          "text-[15px] leading-relaxed text-muted-foreground",
           isCenter && "max-w-xl"
         )}>
           {description}

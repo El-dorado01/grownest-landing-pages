@@ -2,20 +2,34 @@
 
 import { motion } from "motion/react"
 import Image from "next/image"
-import { ArrowRight, Apple, Play } from "lucide-react"
+import { ArrowRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FloatingCard } from "@/components/floating-card"
+import RotatingText from "@/components/RotatingText"
+import LightRays from "@/components/LightRays"
 import {
   fadeUp,
-  fadeIn,
   slideInRight,
   staggerContainer,
   scrollViewport,
 } from "@/lib/motion"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#FFF8E1] pt-28 pb-16 md:pt-32 md:pb-24">
+    <section className="relative min-h-screen overflow-hidden bg-section-light pt-28 pb-16 md:pt-32 md:pb-24">
+
+      {/* LightRays background */}
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#D4A017"
+        lightSpread={1.4}
+        rayLength={1.6}
+        pulsating
+        noiseAmount={0.04}
+        mouseInfluence={0.08}
+        className="!absolute inset-0 opacity-20"
+      />
 
       {/* Subtle radial glow behind hero */}
       <div
@@ -35,7 +49,7 @@ export function HeroSection() {
             variants={staggerContainer(0.12, 0)}
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 sm:items-center lg:items-start"
           >
             {/* Eyebrow */}
             <motion.div variants={fadeUp} className="flex items-center gap-2">
@@ -48,19 +62,27 @@ export function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-[42px] font-bold leading-[1.1] tracking-tight text-[#1A1A1A] sm:text-5xl lg:text-[56px]"
+              className="text-[42px] font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-[56px]"
             >
-              The smarter way{" "}
-              <span className="relative inline-block">
-                <span className="gradient-gold-text">to save</span>
-              </span>{" "}
-              &amp; grow in Africa.
+              The smarter way to{" "}
+              <span className="inline-flex overflow-hidden align-bottom">
+                <RotatingText
+                  texts={["save.", "grow.", "invest.", "thrive."]}
+                  mainClassName="text-[#D4A017] inline-flex"
+                  elementLevelClassName="gradient-gold-text"
+                  rotationInterval={2400}
+                  staggerDuration={0.03}
+                  staggerFrom="first"
+                  transition={{ type: "spring", damping: 22, stiffness: 220 }}
+                />
+              </span>
+              {" "}in Africa.
             </motion.h1>
 
             {/* Sub-copy */}
             <motion.p
               variants={fadeUp}
-              className="max-w-md text-[16px] leading-relaxed text-[#757575]"
+              className="max-w-md text-[16px] leading-relaxed text-muted-foreground"
             >
               Achieve your financial goals with personal savings, group circles,
               and smart basket plans — all in one place.
@@ -80,23 +102,13 @@ export function HeroSection() {
               </Button>
             </motion.div>
 
-            {/* App store badges */}
+            {/* App store badge */}
             <motion.div
               variants={fadeUp}
               className="flex flex-wrap items-center gap-3"
             >
-              <a
-                href="#download"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1A1A1A] px-5 py-2.5 text-white transition-opacity hover:opacity-80"
-              >
-                <Apple size={16} />
-                <div className="text-left">
-                  <p className="text-[9px] leading-none opacity-70">Download on the</p>
-                  <p className="text-[13px] font-semibold leading-tight">App Store</p>
-                </div>
-              </a>
-              <a
-                href="#download"
+              <Link
+                href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
                 className="inline-flex items-center gap-2 rounded-full bg-[#1A1A1A] px-5 py-2.5 text-white transition-opacity hover:opacity-80"
               >
                 <Play size={14} />
@@ -104,23 +116,22 @@ export function HeroSection() {
                   <p className="text-[9px] leading-none opacity-70">Get it on</p>
                   <p className="text-[13px] font-semibold leading-tight">Google Play</p>
                 </div>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Social proof */}
             <motion.div variants={fadeUp} className="flex items-center gap-3">
-              {/* Avatar stack placeholder */}
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="h-8 w-8 rounded-full border-2 border-[#FFF8E1] bg-[#F6ECD1]"
+                    className="h-8 w-8 rounded-full border-2 border-section-light bg-[#F6ECD1]"
                     style={{ zIndex: 4 - i }}
                   />
                 ))}
               </div>
-              <p className="text-[13px] text-[#757575]">
-                <span className="font-bold text-[#1A1A1A]">50,000+</span> Africans
+              <p className="text-[13px] text-muted-foreground">
+                <span className="font-bold text-foreground">50,000+</span> Africans
                 already saving
               </p>
             </motion.div>
@@ -134,30 +145,24 @@ export function HeroSection() {
             viewport={scrollViewport}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Hero image frame */}
-            <div className="relative h-120 w-90 sm:h-135 sm:w-100 lg:h-145 lg:w-110">
+            <div className="relative h-120 w-96 sm:h-135 sm:w-100 lg:h-145 lg:w-150">
               <div className="h-full w-full overflow-hidden rounded-[32px] shadow-[0_24px_64px_rgba(212,160,23,0.18)]">
                 <Image
                   src="/images/hero-lifestyle.jpeg"
                   alt="Woman with GrowNest groceries — your food, your way"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top rounded-[32px] h-full"
                   priority
                 />
               </div>
 
-              {/* Floating card 1 — balance */}
-              <div className="absolute -left-10 top-12 sm:-left-14">
+              <div className="absolute -left-2 top-12 sm:-left-5">
                 <FloatingCard variant="balance" delay={0} />
               </div>
-
-              {/* Floating card 2 — savings interest */}
-              <div className="absolute -right-6 top-1/2 -translate-y-1/2 sm:-right-10">
+              <div className="absolute -right-2 top-1/2 -translate-y-1/2 sm:-right-5">
                 <FloatingCard variant="savings" delay={0.5} />
               </div>
-
-              {/* Floating card 3 — goal progress */}
-              <div className="absolute -left-6 bottom-12 sm:-left-10">
+              <div className="absolute -left-2 bottom-12 sm:-left-5">
                 <FloatingCard variant="goal" delay={1.0} />
               </div>
             </div>
@@ -166,10 +171,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom wave separator */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FFF8E1] to-transparent"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-section-light to-transparent"
       />
     </section>
   )

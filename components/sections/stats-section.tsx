@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useInView } from "motion/react"
+import { motion, useInView, useMotionValue, animate } from "motion/react"
 import Image from "next/image"
+import { Star } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
-import { staggerContainer, fadeUp, slideInLeft, slideInRight, scrollViewport } from "@/lib/motion"
+import { staggerContainer, fadeUp, scrollViewport } from "@/lib/motion"
 
 // ── Animated counter ─────────────────────────────────────────────
 function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -41,22 +42,114 @@ const stats = [
 
 const testimonials = [
   {
-    quote:
-      "GrowNest helped me save for my business capital in just 6 months. The NestEgg lock feature kept me disciplined.",
+    quote: "GrowNest helped me save for my business capital in just 6 months. The NestEgg lock feature kept me disciplined.",
     name: "Adaeze O.",
     role: "Entrepreneur, Lagos",
     image: "/images/social-woman-savings.jpeg",
-    side: "left",
+    rating: 5,
   },
   {
-    quote:
-      "Our GroupNest circle raised ₦500k for a shared investment. The leaderboard made it fun and competitive!",
+    quote: "Our GroupNest circle raised ₦500k for a shared investment. The leaderboard made it fun and competitive!",
     name: "Emeka N.",
     role: "Software Engineer, Abuja",
     image: "/images/social-man-quote.jpeg",
-    side: "right",
+    rating: 5,
+  },
+  {
+    quote: "I finally have an emergency fund. The auto-save feature makes saving effortless — money leaves before I spend it.",
+    name: "Chioma B.",
+    role: "Teacher, Port Harcourt",
+    image: "/images/social-woman-phone.jpeg",
+    rating: 5,
+  },
+  {
+    quote: "NestBaskets saved me from monthly grocery stress. I set it once and my essentials just show up at my door.",
+    name: "Tunde A.",
+    role: "Civil Servant, Ibadan",
+    image: "/images/social-man-cta.jpeg",
+    rating: 5,
   },
 ]
+
+const CARD_WIDTH = 320
+const GAP = 16
+
+function TestimonialCarousel() {
+  const [active, setActive] = useState(0)
+  const x = useMotionValue(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const goTo = (index: number) => {
+    const clamped = Math.max(0, Math.min(index, testimonials.length - 1))
+    setActive(clamped)
+    animate(x, -(clamped * (CARD_WIDTH + GAP)), { type: "spring", stiffness: 300, damping: 30 })
+  }
+
+  const handleDragEnd = (_: unknown, info: { offset: { x: number }; velocity: { x: number } }) => {
+    const { offset, velocity } = info
+    if (offset.x < -50 || velocity.x < -400) goTo(active + 1)
+    else if (offset.x > 50 || velocity.x > 400) goTo(active - 1)
+    else goTo(active)
+  }
+
+  return (
+    <div className="relative">
+      <div ref={containerRef} className="overflow-hidden">
+        <motion.div
+          className="flex cursor-grab active:cursor-grabbing"
+          drag="x"
+          dragConstraints={{
+            left: -((testimonials.length - 1) * (CARD_WIDTH + GAP)),
+            right: 0,
+          }}
+          style={{ x, gap: `${GAP}px` }}
+          onDragEnd={handleDragEnd}
+        >
+          {testimonials.map((t, i) => (
+            <div
+              key={t.name}
+              className="shrink-0 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+              style={{ width: CARD_WIDTH }}
+            >
+              {/* Stars */}
+              <div className="flex gap-0.5">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} size={13} className="fill-[#D4A017] text-[#D4A017]" />
+                ))}
+              </div>
+              {/* Quote */}
+              <p className="flex-1 text-[14px] leading-relaxed text-white/75">&ldquo;{t.quote}&rdquo;</p>
+              {/* Person */}
+              <div className="flex items-center gap-3 border-t border-white/10 pt-4">
+                <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-[#D4A017]/30">
+                  <Image src={t.image} alt={t.name} fill className="object-cover object-top" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">{t.name}</p>
+                  <p className="text-xs text-white/40">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Dot indicators */}
+      <div className="mt-6 flex justify-center gap-2">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              active === i ? "w-6 bg-[#D4A017]" : "w-1.5 bg-white/20 hover:bg-white/40"
+            }`}
+            aria-label={`Go to testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export function StatsSection() {
   return (
@@ -92,39 +185,18 @@ export function StatsSection() {
           title="Join over 50,000 people saving with us"
           description="Real savers. Real results. Here's what the GrowNest community is saying."
           align="center"
-          className="mb-12 [&_h2]:text-white [&_p]:text-white/50"
+          className="mb-10 [&_h2]:text-white [&_p]:text-white/50"
         />
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {testimonials.map((t) => (
-            <motion.div
-              key={t.name}
-              initial="hidden"
-              whileInView="visible"
-              viewport={scrollViewport}
-              variants={t.side === "left" ? slideInLeft : slideInRight}
-              className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm"
-            >
-              {/* Gold quote mark */}
-              <span className="mb-3 block text-4xl font-serif leading-none text-[#D4A017]">
-                &ldquo;
-              </span>
-              <p className="mb-5 text-[15px] leading-relaxed text-white/80">
-                {t.quote}
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#D4A017]/30">
-                  <Image src={t.image} alt={t.name} fill className="object-cover object-top" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-white/40">{t.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Testimonial draggable carousel */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
+          <TestimonialCarousel />
+        </motion.div>
 
       </div>
     </section>

@@ -62,7 +62,7 @@ export function FloatingCard({ variant, className, delay = 0 }: FloatingCardProp
     <motion.div
       animate={anim}
       className={cn(
-        "will-change-transform rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)] min-w-[160px]",
+        "will-change-transform rounded-xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)] min-w-[160px]",
         isDark
           ? `bg-gradient-to-br ${card.bg} text-white`
           : `bg-gradient-to-br ${card.bg} text-[#1A1A1A] border border-[rgba(212,160,23,0.12)]`,

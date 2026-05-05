@@ -15,8 +15,8 @@ const benefits = [
 ]
 
 const boxes = [
-  { src: "/images/basket-box-cream.jpeg", alt: "GrowNest essentials box", delay: 0 },
-  { src: "/images/basket-box-alt.jpeg",   alt: "GrowNest food basket",    delay: 0.12 },
+  { src: "/images/nestbaskets-essentials.jpeg", alt: "GrowNest essentials box", delay: 0 },
+  // { src: "/images/basket-box-alt.jpeg",   alt: "GrowNest food basket",    delay: 0.12 },
 ]
 
 export function NestBasketsSection() {
@@ -110,7 +110,7 @@ export function NestBasketsSection() {
                 transition={{ delay: box.delay }}
                 className={`relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] will-change-transform ${
                   i === 0
-                    ? "h-64 w-52 lg:h-80 lg:w-64"
+                    ? "h-64 w-100 lg:h-100 lg:w-120"
                     : "h-56 w-44 lg:h-72 lg:w-56 mb-6"
                 }`}
               >
@@ -118,7 +118,7 @@ export function NestBasketsSection() {
                   src={box.src}
                   alt={box.alt}
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                 />
               </motion.div>
             ))}
@@ -133,7 +133,7 @@ export function NestBasketsSection() {
             >
               <Truck size={16} className="text-white" />
               <div>
-                <p className="text-xs font-bold text-white leading-none">Free delivery</p>
+                <p className="text-xs font-bold text-white leading-none">Fast delivery</p>
                 <p className="text-[10px] text-white/70 mt-0.5">Within Nigeria</p>
               </div>
             </motion.div>

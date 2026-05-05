@@ -9,6 +9,7 @@ const footerLinks = {
     { label: "NestEggs", href: "#features" },
     { label: "GroupNest", href: "#features" },
     { label: "NestBaskets", href: "#features" },
+    { label: "NestMarket", href: "#features" },
   ],
   Company: [
     { label: "About us", href: "#" },

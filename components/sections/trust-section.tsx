@@ -9,13 +9,13 @@ import { staggerContainer, fadeUp, slideInLeft, slideInRight, scaleUp, scrollVie
 const trustBadges = [
   { icon: Shield, label: "Bank-level security", sub: "256-bit encryption" },
   { icon: Lock,   label: "Data privacy",        sub: "NDPR compliant" },
-  { icon: Star,   label: "4.9 App rating",       sub: "10k+ reviews" },
+  { icon: Star,   label: "0 App rating",       sub: "10+ reviews" },
   { icon: Award,  label: "Licensed & regulated", sub: "CBN guidelines" },
 ]
 
 export function TrustSection() {
   return (
-    <section id="trust" className="bg-[#FFF8E1] py-20 md:py-28 overflow-hidden">
+    <section id="trust" className="bg-section-light py-20 md:py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl px-6">
 
         <SectionHeading
@@ -38,14 +38,14 @@ export function TrustSection() {
             <motion.div
               key={label}
               variants={scaleUp}
-              className="flex flex-col items-center gap-3 rounded-2xl border border-[#D4A017]/15 bg-white p-6 text-center shadow-[0_4px_16px_rgba(0,0,0,0.05)]"
+              className="flex flex-col items-center gap-3 rounded-2xl border border-[#D4A017]/15 bg-card p-6 text-center shadow-[0_4px_16px_rgba(0,0,0,0.05)]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4A017]/10">
                 <Icon size={22} className="text-[#D4A017]" />
               </div>
               <div>
-                <p className="text-sm font-bold text-[#1A1A1A]">{label}</p>
-                <p className="mt-0.5 text-xs text-[#757575]">{sub}</p>
+                <p className="text-sm font-bold text-foreground">{label}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{sub}</p>
               </div>
             </motion.div>
           ))}
@@ -116,14 +116,14 @@ export function TrustSection() {
               </div>
 
               {/* Secondary image — offset */}
-              <div className="relative mt-10 h-64 w-48 overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.4)] lg:h-72 lg:w-56">
+              {/* <div className="relative mt-10 h-64 w-48 overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.4)] lg:h-72 lg:w-56">
                 <Image
                   src="/images/social-friends.jpeg"
                   alt="Friends saving together with GrowNest"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center display-none"
                 />
-              </div>
+              </div> */}
 
               {/* Floating star rating badge */}
               <motion.div
@@ -135,8 +135,8 @@ export function TrustSection() {
               >
                 <Star size={15} className="fill-white text-white" />
                 <div>
-                  <p className="text-xs font-bold text-white leading-none">4.9 / 5 rating</p>
-                  <p className="text-[10px] text-white/70 mt-0.5">10,000+ reviews</p>
+                  <p className="text-xs font-bold text-white leading-none">4.0 / 5 rating</p>
+                  <p className="text-[10px] text-white/70 mt-0.5">10+ reviews</p>
                 </div>
               </motion.div>
             </motion.div>

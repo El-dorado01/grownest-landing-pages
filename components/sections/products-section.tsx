@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "motion/react"
-import { Wallet, Egg, Users, ShoppingBasket } from "lucide-react"
+import { Wallet, Egg, Users, ShoppingBasket, ShoppingBag } from "lucide-react"
 import { FeatureCard } from "@/components/feature-card"
+import { GlowWrapper } from "@/components/GlowWrapper"
 import { SectionHeading } from "@/components/section-heading"
 import { staggerContainer, fadeUp, scrollViewport } from "@/lib/motion"
 
@@ -39,11 +40,19 @@ const products = [
     image: "/images/app-nestbaskets.jpeg",
     imageAlt: "NestBaskets app screen",
   },
+  {
+    icon: ShoppingBag,
+    title: "NestMarket",
+    description: "Spend your savings on thousands of curated products. Food, fashion, electronics and more — pay directly from your NestPurse.",
+    accentColor: "#D4A017",
+    image: "/images/market-app-phone.jpeg",
+    imageAlt: "NestMarket app screen showing products",
+  },
 ]
 
 export function ProductsSection() {
   return (
-    <section id="features" className="bg-[#FFF8E1] py-20 md:py-28">
+    <section id="features" className="bg-section-light py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
 
         <SectionHeading
@@ -59,7 +68,7 @@ export function ProductsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={scrollViewport}
-          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         >
           {products.map((product, i) => (
             <motion.div key={product.title} variants={fadeUp}>

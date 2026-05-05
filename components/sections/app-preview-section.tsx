@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "motion/react"
 import Image from "next/image"
 import { SectionHeading } from "@/components/section-heading"
-import { staggerContainer, fadeUp, slideInLeft, slideInRight, scrollViewport } from "@/lib/motion"
+import { staggerContainer, fadeUp, slideInRight, scrollViewport } from "@/lib/motion"
 
 const steps = [
   {
@@ -23,9 +24,19 @@ const steps = [
   },
 ]
 
+const screens = [
+  { src: "/images/app-home-hand.jpeg",  alt: "GrowNest app home screen in hand" },
+  { src: "/images/app-nesteggs.jpeg",   alt: "NestEggs savings goal screen" },
+]
+
 export function AppPreviewSection() {
+  const [flipped, setFlipped] = useState(false)
+
+  const front = screens[flipped ? 1 : 0]
+  const back  = screens[flipped ? 0 : 1]
+
   return (
-    <section id="how-it-works" className="bg-[#FFFDF5] py-20 md:py-28 overflow-hidden">
+    <section id="how-it-works" className="bg-section-lifted py-20 md:py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl px-6">
 
         <SectionHeading
@@ -52,7 +63,6 @@ export function AppPreviewSection() {
                 variants={fadeUp}
                 className="flex gap-5"
               >
-                {/* Step number + connector */}
                 <div className="flex flex-col items-center">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D4A017] text-sm font-bold text-white shadow-[0_4px_12px_rgba(212,160,23,0.35)]">
                     {step.number}
@@ -61,16 +71,15 @@ export function AppPreviewSection() {
                     <div className="mt-2 w-px flex-1 bg-gradient-to-b from-[#D4A017]/40 to-transparent" />
                   )}
                 </div>
-                {/* Content */}
                 <div className="pb-8">
-                  <h3 className="mb-1.5 text-lg font-bold text-[#1A1A1A]">{step.title}</h3>
-                  <p className="text-sm leading-relaxed text-[#757575]">{step.description}</p>
+                  <h3 className="mb-1.5 text-lg font-bold text-foreground">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* ── Right: phone mockups ────────────────────────────── */}
+          {/* ── Right: phone mockups (click back to swap) ──────── */}
           <motion.div
             variants={slideInRight}
             initial="hidden"
@@ -78,33 +87,40 @@ export function AppPreviewSection() {
             viewport={scrollViewport}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Back phone */}
+            {/* Back phone — clickable to swap */}
             <motion.div
+              key={`back-${flipped}`}
               initial={{ opacity: 0, x: 30, rotate: 6 }}
-              whileInView={{ opacity: 1, x: 0, rotate: 6 }}
-              viewport={scrollViewport}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              className="absolute right-4 top-4 h-96 w-52 overflow-hidden rounded-[28px] shadow-[0_16px_48px_rgba(0,0,0,0.14)] will-change-transform lg:h-[420px] lg:w-56"
+              animate={{ opacity: 1, x: 0, rotate: 6 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.45 }}
+              onClick={() => setFlipped(f => !f)}
+              className="absolute right-4 top-4 h-96 w-52 cursor-pointer overflow-hidden rounded-[28px] shadow-[0_16px_48px_rgba(0,0,0,0.14)] will-change-transform lg:h-[420px] lg:w-56 ring-2 ring-transparent hover:ring-[#D4A017]/50 transition-shadow duration-200"
+              title="Tap to switch screen"
             >
               <Image
-                src="/images/app-nesteggs.jpeg"
-                alt="NestEggs savings goal screen"
+                src={back.src}
+                alt={back.alt}
                 fill
                 className="object-cover object-top"
               />
+              {/* Hint overlay */}
+              <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/40 to-transparent">
+                <span className="text-[10px] font-semibold text-white/80 tracking-wider">TAP TO SWITCH</span>
+              </div>
             </motion.div>
 
             {/* Front phone */}
             <motion.div
+              key={`front-${flipped}`}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={scrollViewport}
-              transition={{ duration: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
               className="relative z-10 h-96 w-52 overflow-hidden rounded-[28px] shadow-[0_24px_64px_rgba(212,160,23,0.20)] will-change-transform lg:h-[420px] lg:w-56"
             >
               <Image
-                src="/images/app-home-hand.jpeg"
-                alt="GrowNest app home screen in hand"
+                src={front.src}
+                alt={front.alt}
                 fill
                 className="object-cover object-center"
               />
