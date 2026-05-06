@@ -93,9 +93,11 @@ export function HeroSection() {
               variants={fadeUp}
               className="flex flex-wrap items-center gap-3"
             >
-              <Button variant="gradient" size="default" className="gap-2">
-                Get started free
-                <ArrowRight size={16} />
+              <Button variant="gradient" size="default" className="gap-2" asChild>
+                <Link href="https://dashboard.grownest.africa/signup">
+                  Get started free
+                  <ArrowRight size={16} />
+                </Link>
               </Button>
               <Button variant="outline" size="default">
                 See how it works

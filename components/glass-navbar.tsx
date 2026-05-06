@@ -34,7 +34,7 @@ export function GlassNavbar() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4">
+    <header className="fixed top-0 right-0 left-0 z-50 flex justify-center px-4 pt-4">
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -59,12 +59,12 @@ export function GlassNavbar() {
           </Link>
 
           {/* Desktop links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
+                className="text-sm font-medium text-foreground/70 transition-colors duration-200 hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -72,25 +72,25 @@ export function GlassNavbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Link
-              href="#download"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
+              href="https://dashboard.grownest.africa/login"
+              className="text-sm font-medium text-foreground/70 transition-colors duration-200 hover:text-foreground"
             >
               Sign in
             </Link>
-            <a
-              href="#download"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#D4A017] px-5 py-2 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#B49233] active:scale-95 shadow-[0_4px_0_rgba(212,160,23,0.35)]"
+            <Link
+              href="https://dashboard.grownest.africa/signup"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#D4A017] px-5 py-2 text-sm font-semibold text-white shadow-[0_4px_0_rgba(212,160,23,0.35)] transition-all duration-150 hover:bg-[#B49233] active:scale-95"
             >
               Get started
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-white bg-[#D4A017]"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#D4A017] text-white md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -107,7 +107,7 @@ export function GlassNavbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-22.5 left-4 right-4 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.14)] p-4 border border-white/40"
+            className="absolute top-22.5 right-4 left-4 rounded-2xl border border-white/40 p-4 shadow-[0_8px_32px_rgba(0,0,0,0.14)]"
             style={{
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
@@ -120,23 +120,23 @@ export function GlassNavbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-2.5 rounded-xl text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/40 transition-colors duration-150"
+                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors duration-150 hover:bg-white/40 hover:text-foreground"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-2 pt-2 border-t border-white/30 flex flex-col gap-2">
+              <div className="mt-2 flex flex-col gap-2 border-t border-white/30 pt-2">
                 <Link
                   href="#download"
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-2.5 rounded-xl text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-white/40 transition-colors duration-150"
+                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors duration-150 hover:bg-white/40 hover:text-foreground"
                 >
                   Sign in
                 </Link>
                 <Link
                   href="#download"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center rounded-full bg-[#D4A017] py-2.5 text-sm font-semibold text-white hover:bg-[#B49233] transition-colors duration-150"
+                  className="flex items-center justify-center rounded-full bg-[#D4A017] py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-[#B49233]"
                 >
                   Get started
                 </Link>
