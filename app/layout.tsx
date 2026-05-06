@@ -13,9 +13,9 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "GrowNest | Secure & Sustainable Wealth Growth",
+  title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
   description:
-    "Join GrowNest, Africa's premier platform for financial prosperity. We offer secure, sustainable, and high-yield wealth growth opportunities for everyone.",
+    "Save Smart. Shop Easy. Smile Always. Join GrowNest, Africa's premier platform for financial prosperity and sustainable wealth growth.",
   keywords: [
     "wealth growth",
     "savings",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://grownest.africa",
-    title: "GrowNest | Africa's Leading Wealth Growth Platform",
+    title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
     description:
-      "Start your journey to financial freedom today. Secure and sustainable wealth growth at your fingertips.",
+      "Start your journey to financial freedom today. Save Smart. Shop Easy. Smile Always with GrowNest.",
     siteName: "GrowNest",
     images: [
       {
-        url: "/social-preview.png",
+        url: "/social-preview.jpeg",
         width: 1200,
         height: 630,
         alt: "GrowNest Wealth Growth",
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrowNest | Secure Wealth Growth",
+    title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
     description:
-      "Africa's premier platform for financial prosperity. Grow your wealth sustainably with GrowNest.",
-    images: ["/social-preview.png"],
+      "Africa's premier platform for financial prosperity. Save Smart. Shop Easy. Smile Always.",
+    images: ["/social-preview.jpeg"],
   },
   robots: {
     index: true,
