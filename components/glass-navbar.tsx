@@ -120,7 +120,7 @@ export function GlassNavbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors duration-150 hover:bg-white/40 hover:text-foreground"
+                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 dark:text-black transition-colors duration-150 hover:bg-white/40 hover:text-foreground dark:hover:bg-[#B49233]"
                 >
                   {link.label}
                 </Link>
@@ -129,7 +129,7 @@ export function GlassNavbar() {
                 <Link
                   href="#download"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors duration-150 hover:bg-white/40 hover:text-foreground"
+                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 dark:text-black transition-colors duration-150 hover:bg-white/40 hover:text-foreground dark:hover:bg-[#B49233]"
                 >
                   Sign in
                 </Link>
