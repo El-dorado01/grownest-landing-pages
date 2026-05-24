@@ -14,6 +14,13 @@ import {
   scrollViewport,
 } from "@/lib/motion"
 import Link from "next/link"
+import googleImage from "../../assets/images/google_play_store_badge.png"
+import avatar1 from "../../assets/images/avatar1.png"
+import avatar2 from "../../assets/images/avater2.png"
+import avatar3 from "../../assets/images/avater3.png"
+import avatar4 from "../../assets/images/avater4.png"
+
+const avatars = [avatar1, avatar2, avatar3, avatar4]
 
 export function HeroSection() {
   return (
@@ -107,29 +114,32 @@ export function HeroSection() {
             {/* App store badge */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-wrap items-center gap-3"
+              className="flex flex-wrap items-center"
             >
               <Link
                 href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1A1A1A] px-5 py-2.5 text-white transition-opacity hover:opacity-80"
+                className="inline-flex transition-opacity hover:opacity-80"
               >
-                <Play size={14} />
+                <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0 rounded-full" />
+                {/* <Play size={14} />
                 <div className="text-left">
                   <p className="text-[9px] leading-none opacity-70">Get it on</p>
                   <p className="text-[13px] font-semibold leading-tight">Google Play</p>
-                </div>
+                </div> */}
               </Link>
             </motion.div>
 
             {/* Social proof */}
             <motion.div variants={fadeUp} className="flex items-center gap-3">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
+                {avatars.map((avatar, i) => (
                   <div
                     key={i}
-                    className="h-8 w-8 rounded-full border-2 border-section-light bg-[#F6ECD1]"
-                    style={{ zIndex: 4 - i }}
-                  />
+                    className="relative h-8 w-8 rounded-full border-2 border-section-light overflow-hidden"
+                    style={{ zIndex: avatars.length - i }}
+                  >
+                    <Image src={avatar} alt={`GrowNest user ${i + 1}`} fill className="object-cover" />
+                  </div>
                 ))}
               </div>
               <p className="text-[13px] text-muted-foreground">
@@ -150,7 +160,7 @@ export function HeroSection() {
             <div className="relative h-120 w-96 sm:h-135 sm:w-100 lg:h-145 lg:w-150">
               <div className="h-full w-full overflow-hidden rounded-[32px] shadow-[0_24px_64px_rgba(212,160,23,0.18)]">
                 <Image
-                  src="/images/hero-lifestyle.jpeg"
+                  src="/images/hero-lifestyle-re.jpeg"
                   alt="Woman with GrowNest groceries — your food, your way"
                   fill
                   className="object-cover object-top rounded-[32px] h-full"

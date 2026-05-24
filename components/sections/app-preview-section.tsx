@@ -88,7 +88,7 @@ export function AppPreviewSection() {
             className="relative flex justify-center lg:justify-end"
           >
             {/* Back phone — clickable to swap */}
-            <motion.div
+            {/* <motion.div
               key={`back-${flipped}`}
               initial={{ opacity: 0, x: 30, rotate: 6 }}
               animate={{ opacity: 1, x: 0, rotate: 6 }}
@@ -103,15 +103,15 @@ export function AppPreviewSection() {
                 alt={back.alt}
                 fill
                 className="object-cover object-top"
-              />
+              /> */}
               {/* Hint overlay */}
-              <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/40 to-transparent">
+              {/* <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/40 to-transparent">
                 <span className="text-[10px] font-semibold text-white/80 tracking-wider">TAP TO SWITCH</span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Front phone */}
-            <motion.div
+            {/* <motion.div
               key={`front-${flipped}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ export function AppPreviewSection() {
                 fill
                 className="object-cover object-center"
               />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
         </div>

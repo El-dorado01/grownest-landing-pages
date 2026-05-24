@@ -16,6 +16,7 @@ const footerLinks = {
     { label: "Blog", href: "#" },
     { label: "Careers", href: "#" },
     { label: "Press", href: "#" },
+    
   ],
   Support: [
     { label: "Help Center", href: "#" },
@@ -29,6 +30,11 @@ const footerLinks = {
     { label: "Cookie Policy", href: "#" },
     { label: "Security", href: "#" },
   ],
+  contact: [
+    {label: "lorem ipsum ksmksmksmksmkssjsjdnjnd dwmjnjdnjsn", href: "#" },
+    {label: "support@grownest.africa", href: "mailto:support@grownest.africa" },
+    {label: "+234 803 123 4567", href: "tel:+2348031234567" }
+  ]
 }
 
 const socials = [

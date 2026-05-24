@@ -7,14 +7,14 @@ import { SectionHeading } from "@/components/section-heading"
 import { fadeUp, scrollViewport } from "@/lib/motion"
 
 const foodItems = [
-  { id: "f1",  img: "/images/market-groceries.jpeg",       url: "#", height: 560 },
-  { id: "f2",  img: "/images/basket-box-gold.jpeg",        url: "#", height: 480 },
-  { id: "f3",  img: "/images/market-beverages.jpeg",       url: "#", height: 520 },
-  { id: "f4",  img: "/images/nestbaskets-essentials.jpeg", url: "#", height: 500 },
-  { id: "f5",  img: "/images/market-box-gold.jpeg",        url: "#", height: 460 },
-  { id: "f6",  img: "/images/basket-box-cream.jpeg",       url: "#", height: 540 },
-  { id: "f7",  img: "/images/nestbaskets-pain1.jpeg",      url: "#", height: 480 },
-  { id: "f8",  img: "/images/basket-box-alt.jpeg",         url: "#", height: 500 },
+  { id: "f1", img: "/images/market-staples-spread.png",    url: "#", height: 520 },
+  { id: "f2", img: "/images/market-box-1.png",             url: "#", height: 480 },
+  { id: "f3", img: "/images/market-box-2.png",             url: "#", height: 500 },
+  { id: "f4", img: "/images/market-cleaning-products.png", url: "#", height: 460 },
+  { id: "f5", img: "/images/market-beverages-spread.png",  url: "#", height: 520 },
+  { id: "f6", img: "/images/market-breakfast-pantry.png",  url: "#", height: 500 },
+  { id: "f7", img: "/images/market-box-3.png",             url: "#", height: 480 },
+  { id: "f8", img: "/images/market-box-4.png",             url: "#", height: 500 },
 ]
 
 function useMasonryHeight() {

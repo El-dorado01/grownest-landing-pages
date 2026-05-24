@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { fadeUp, popIn, staggerContainer, scrollViewport } from "@/lib/motion"
 import Image from "next/image"
 
-import platStoreImage from "../../assets/images/google-play.png"
+import googleImage from "../../assets/images/google_play_store_badge.png"
 import { Apple, Play } from "lucide-react"
 
 export function DownloadCtaSection() {
@@ -110,13 +110,14 @@ export function DownloadCtaSection() {
               variants={popIn}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 shadow-[0_4px_0_rgba(0,0,0,0.15)] transition-colors hover:bg-white/90"
+              className="inline-flex items-center transition-colors hover:bg-white/90"
             >
-              <Play size={18} className="text-[#1A1A1A]" />
+              <Image src={googleImage} alt="Get it on Google Play" width={220} height={40} className="p-0 rounded-lg" />
+              {/* <Play size={18} className="text-[#1A1A1A]" />
               <div className="text-left">
                 <p className="text-[9px] leading-none text-[#757575]">Get it on</p>
                 <p className="text-[14px] font-bold leading-tight text-[#1A1A1A]">Google Play</p>
-              </div>
+              </div> */}
             </motion.a>
           </motion.div>
 
