@@ -45,7 +45,7 @@ const products = [
     title: "NestMarket",
     description: "Spend your savings on thousands of curated products. Food, fashion, electronics and more — pay directly from your NestPurse.",
     accentColor: "#D4A017",
-    image: "/images/market-app-phone.jpeg",
+    image: "/images/market-delivery.jpeg",
     imageAlt: "NestMarket app screen showing products",
   },
 ]

@@ -120,7 +120,7 @@ export function HeroSection() {
                 href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
                 className="inline-flex transition-opacity hover:opacity-80"
               >
-                <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0 rounded-full" />
+                <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0 rounded-lg" />
                 {/* <Play size={14} />
                 <div className="text-left">
                   <p className="text-[9px] leading-none opacity-70">Get it on</p>
@@ -163,7 +163,7 @@ export function HeroSection() {
                   src="/images/hero-lifestyle-re.jpeg"
                   alt="Woman with GrowNest groceries — your food, your way"
                   fill
-                  className="object-cover object-top rounded-[32px] h-full"
+                  className="object-fill object-top rounded-[32px] h-full"
                   priority
                 />
               </div>

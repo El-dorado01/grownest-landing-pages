@@ -60,7 +60,7 @@ export function FeatureCard({
 
       {/* App screenshot */}
       {image && (
-        <div className="relative mt-5 h-44 w-full overflow-hidden rounded-xl">
+        <div className="relative mt-5 h-60 w-full overflow-hidden rounded-xl">
           <Image
             src={image}
             alt={imageAlt ?? title}

@@ -101,12 +101,12 @@ export function NestMarketSection() {
             <div className="absolute inset-0 -z-10 scale-90 rounded-3xl bg-[#D4A017]/6 blur-2xl" />
 
             {/* Main image */}
-            <div className="relative z-10 h-125 w-72 overflow-hidden rounded-3xl shadow-[0_24px_64px_rgba(212,160,23,0.22)] lg:h-135 lg:w-80">
+            <div className="relative z-10 h-125 w-82 overflow-hidden rounded-3xl shadow-[0_24px_64px_rgba(212,160,23,0.22)] lg:h-135 lg:w-80">
               <Image
                 src="/images/market-app-phone.jpeg"
                 alt="NestMarket app screen showing food products"
                 fill
-                className="object-cover object-top"
+                className="object-contain object-fill"
               />
             </div>
 
@@ -133,7 +133,7 @@ export function NestMarketSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={scrollViewport}
               transition={{ delay: 0.55, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
-              className="absolute -bottom-4 right-4 flex items-center gap-2 rounded-2xl bg-[#D4A017] px-4 py-3 shadow-[0_8px_24px_rgba(212,160,23,0.4)] lg:right-0"
+              className="absolute -bottom-20 right-4 flex items-center gap-2 rounded-2xl bg-[#D4A017] px-4 py-3 shadow-[0_8px_24px_rgba(212,160,23,0.4)] lg:right-0 z-20"
             >
               <Tag size={15} className="text-white" />
               <div>

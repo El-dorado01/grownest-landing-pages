@@ -13,6 +13,8 @@ const trustBadges = [
   { icon: Award,  label: "Licensed & regulated", sub: "CBN guidelines" },
 ]
 
+import dummyAvatar from "@/assets/images/avater3.png"
+
 export function TrustSection() {
   return (
     <section id="trust" className="bg-section-light py-20 md:py-28 overflow-hidden">
@@ -84,7 +86,7 @@ export function TrustSection() {
               <div className="flex items-center gap-4">
                 <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[#D4A017]/40">
                   <Image
-                    src="/images/social-man-quote.jpeg"
+                    src={dummyAvatar}
                     alt="GrowNest satisfied saver"
                     fill
                     className="object-cover object-top"

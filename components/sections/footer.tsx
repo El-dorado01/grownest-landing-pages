@@ -1,15 +1,18 @@
 import Image from "next/image"
 import { ExternalLink, AtSign, Globe, Share2 } from "lucide-react"
+import Link from "next/link"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 
 // lucide-react v1 removed brand icons — using generic alternatives
 
 const footerLinks = {
   Product: [
-    { label: "NestPurse", href: "#features" },
-    { label: "NestEggs", href: "#features" },
-    { label: "GroupNest", href: "#features" },
-    { label: "NestBaskets", href: "#features" },
-    { label: "NestMarket", href: "#features" },
+    // Doesnt exists yet app/not-found.tsx.
+    { label: "NestPurse", href: "/nestpurse" },
+    { label: "NestEggs", href: "/nesteggs" },
+    { label: "GroupNest", href: "/groupnest" },
+    { label: "NestBaskets", href: "/nestbaskets" },
+    { label: "NestMarket", href: "/nestmarket" },
   ],
   Company: [
     { label: "About us", href: "#" },
@@ -38,10 +41,10 @@ const footerLinks = {
 }
 
 const socials = [
-  { icon: AtSign, label: "Twitter / X", href: "#" },
-  { icon: Globe, label: "Instagram", href: "#" },
-  { icon: ExternalLink, label: "LinkedIn", href: "#" },
-  { icon: Share2, label: "Facebook", href: "#" },
+  { icon: FaTwitter, label: "Twitter / X", href: "#" },
+  { icon: FaInstagram, label: "Instagram", href: "#" },
+  { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
+  { icon: FaFacebookF, label: "Facebook", href: "#" },
 ]
 
 export function Footer() {
@@ -73,6 +76,8 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/40 transition-colors hover:border-[#D4A017]/40 hover:text-[#D4A017]"
                 >
                   <Icon size={14} />
@@ -88,16 +93,26 @@ export function Footer() {
                 {category}
               </h4>
               <ul className="flex flex-col gap-2.5">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-white/50 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const className =
+                    "text-sm text-white/50 transition-colors hover:text-white"
+                  // mailto:, tel:, and external (http) links use a plain <a>;
+                  // internal app routes use Next's <Link> for client-side nav.
+                  const isExternal = /^(mailto:|tel:|https?:)/.test(link.href)
+                  return (
+                    <li key={link.label}>
+                      {isExternal ? (
+                        <a href={link.href} className={className}>
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className={className}>
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}

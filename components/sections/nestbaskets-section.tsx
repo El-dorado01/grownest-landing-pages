@@ -110,7 +110,7 @@ export function NestBasketsSection() {
                 transition={{ delay: box.delay }}
                 className={`relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.35)] will-change-transform ${
                   i === 0
-                    ? "h-64 w-100 lg:h-100 lg:w-120"
+                    ? "h-100 w-100 lg:h-130 lg:w-120"
                     : "h-56 w-44 lg:h-72 lg:w-56 mb-6"
                 }`}
               >
@@ -118,7 +118,7 @@ export function NestBasketsSection() {
                   src={box.src}
                   alt={box.alt}
                   fill
-                  className="object-contain object-center"
+                  className="object-fill object-center"
                 />
               </motion.div>
             ))}
