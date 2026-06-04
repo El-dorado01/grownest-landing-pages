@@ -108,12 +108,12 @@ export function TrustSection() {
               className="relative flex justify-center gap-4 lg:justify-end"
             >
               {/* Main image */}
-              <div className="relative h-72 w-56 overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.4)] lg:h-80 lg:w-64">
+              <div className="relative h-72 w-80 overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.4)] lg:h-72 lg:w-80">
                 <Image
-                  src="/images/social-man-cta.jpeg"
+                  src="/images/rating-section.jpeg"
                   alt="Happy GrowNest user"
                   fill
-                  className="object-cover object-center"
+                  className="object-fit object-top"
                 />
               </div>
 

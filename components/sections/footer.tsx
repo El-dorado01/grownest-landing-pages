@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { ExternalLink, AtSign, Globe, Share2 } from "lucide-react"
 import Link from "next/link"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa"
 
 // lucide-react v1 removed brand icons — using generic alternatives
 
@@ -34,17 +34,17 @@ const footerLinks = {
     { label: "Security", href: "#" },
   ],
   contact: [
-    {label: "lorem ipsum ksmksmksmksmkssjsjdnjnd dwmjnjdnjsn", href: "#" },
+    {label: "Km 13 DSC Express-Way, Opete Junction, Otokutu, Deleta State", href: "#" },
     {label: "support@grownest.africa", href: "mailto:support@grownest.africa" },
-    {label: "+234 803 123 4567", href: "tel:+2348031234567" }
+    {label: "+234 705 329 0027", href: "tel:+2347053290027" }
   ]
 }
 
 const socials = [
-  { icon: FaTwitter, label: "Twitter / X", href: "#" },
-  { icon: FaInstagram, label: "Instagram", href: "#" },
-  { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
-  { icon: FaFacebookF, label: "Facebook", href: "#" },
+  { icon: FaTwitter, label: "Twitter / X", href: "https://x.com/Grownestafrica" },
+  { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/grownest.africa?igsh=NnlkZDFyZm0xZHBh" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/message/3E3BWQIR5Y3OL1" },
+  { icon: FaFacebookF, label: "Facebook", href: "https://www.facebook.com/share/1HJ4BJTj8R/" },
 ]
 
 export function Footer() {

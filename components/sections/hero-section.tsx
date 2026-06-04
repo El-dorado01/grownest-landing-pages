@@ -163,7 +163,7 @@ export function HeroSection() {
                   src="/images/hero-lifestyle-re.jpeg"
                   alt="Woman with GrowNest groceries — your food, your way"
                   fill
-                  className="object-fill object-top rounded-[32px] h-full"
+                  className="object-cover object-top rounded-[32px] h-full"
                   priority
                 />
               </div>

@@ -7,6 +7,12 @@ import { Star } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { staggerContainer, fadeUp, scrollViewport } from "@/lib/motion"
 
+// Avatar images
+import avatar1 from "../../assets/images/avatar1.png"
+import avatar2 from "../../assets/images/avater2.png"
+import avatar3 from "../../assets/images/avater3.png"
+import avatar4 from "../../assets/images/avater4.png"
+
 // ── Animated counter ─────────────────────────────────────────────
 function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0)
@@ -45,7 +51,7 @@ const testimonials = [
     quote: "GrowNest helped me save for my business capital in just 6 months. The NestEgg lock feature kept me disciplined.",
     name: "Adaeze O.",
     role: "Entrepreneur, Lagos",
-    image: "/images/social-woman-savings.jpeg",
+    image: avatar1,
     rating: 5,
   },
   {
@@ -59,14 +65,14 @@ const testimonials = [
     quote: "I finally have an emergency fund. The auto-save feature makes saving effortless — money leaves before I spend it.",
     name: "Chioma B.",
     role: "Teacher, Port Harcourt",
-    image: "/images/social-woman-phone.jpeg",
+    image: avatar2,
     rating: 5,
   },
   {
     quote: "NestBaskets saved me from monthly grocery stress. I set it once and my essentials just show up at my door.",
     name: "Tunde A.",
     role: "Civil Servant, Ibadan",
-    image: "/images/social-man-cta.jpeg",
+    image: avatar3,
     rating: 5,
   },
 ]
