@@ -127,14 +127,14 @@ export function GlassNavbar() {
               ))}
               <div className="mt-2 flex flex-col gap-2 border-t border-white/30 pt-2">
                 <Link
-                  href="#download"
+                  href="https://dashboard.grownest.africa/login"
                   onClick={() => setMobileOpen(false)}
                   className="rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/80 dark:text-black transition-colors duration-150 hover:bg-white/40 hover:text-foreground dark:hover:bg-[#B49233]"
                 >
                   Sign in
                 </Link>
                 <Link
-                  href="#download"
+                  href="https://dashboard.grownest.africa/signup"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center rounded-full bg-[#D4A017] py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-[#B49233]"
                 >

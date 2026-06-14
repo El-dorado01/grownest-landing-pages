@@ -7,12 +7,12 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp } from "r
 
 const footerLinks = {
   Product: [
-    // Doesnt exists yet app/not-found.tsx.
-    { label: "NestPurse", href: "/nestpurse" },
-    { label: "NestEggs", href: "/nesteggs" },
-    { label: "GroupNest", href: "/groupnest" },
-    { label: "NestBaskets", href: "/nestbaskets" },
-    { label: "NestMarket", href: "/nestmarket" },
+    // Not built yet — route to the coming-soon page, personalized per product.
+    { label: "NestPurse", href: "/coming-soon?product=NestPurse" },
+    { label: "NestEggs", href: "/coming-soon?product=NestEggs" },
+    { label: "GroupNest", href: "/coming-soon?product=GroupNest" },
+    { label: "NestBaskets", href: "/coming-soon?product=NestBaskets" },
+    { label: "NestMarket", href: "/coming-soon?product=NestMarket" },
   ],
   Company: [
     { label: "About us", href: "#" },
