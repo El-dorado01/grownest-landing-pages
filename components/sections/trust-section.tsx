@@ -9,8 +9,8 @@ import { staggerContainer, fadeUp, slideInLeft, slideInRight, scaleUp, scrollVie
 const trustBadges = [
   { icon: Shield, label: "Bank-level security", sub: "256-bit encryption" },
   { icon: Lock,   label: "Data privacy",        sub: "NDPR compliant" },
-  { icon: Star,   label: "0 App rating",       sub: "10+ reviews" },
-  { icon: Award,  label: "Licensed & regulated", sub: "CBN guidelines" },
+  { icon: Star,   label: "4.8 App rating",       sub: "10+ reviews" },
+  { icon: Award,  label: "Regulated", sub: "by CBN" },
 ]
 
 import dummyAvatar from "@/assets/images/avater3.png"

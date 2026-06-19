@@ -40,8 +40,8 @@ function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: stri
 }
 
 const stats = [
-  { value: 50000, suffix: "+", label: "Active savers" },
-  { value: 2, suffix: "B+", label: "Naira saved", prefix: "₦" },
+  { value: 5000, suffix: "+", label: "Active savers" },
+  { value: 2, suffix: "M+", label: "Naira saved", prefix: "₦" },
   { value: 98, suffix: "%", label: "Customer satisfaction" },
   { value: 4, suffix: "+", label: "Savings products" },
 ]
@@ -188,7 +188,7 @@ export function StatsSection() {
         {/* Heading */}
         <SectionHeading
           eyebrow="Community"
-          title="Join over 50,000 people saving with us"
+          title="Join over 5,000 people saving with us"
           description="Real savers. Real results. Here's what the GrowNest community is saying."
           align="center"
           className="mb-10 [&_h2]:text-white [&_p]:text-white/50"

@@ -3,14 +3,14 @@
 import LogoLoop, { type LogoItem } from "@/components/LogoLoop"
 
 const partners: LogoItem[] = [
-  {
-    node: (
-      <span className="flex items-center gap-2 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
-        <span className="text-[13px] font-bold tracking-widest uppercase">CBN</span>
-        <span className="text-[11px] font-medium opacity-70">Regulated</span>
-      </span>
-    ),
-  },
+  // {
+  //   node: (
+  //     <span className="flex items-center gap-2 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
+  //       <span className="text-[13px] font-bold tracking-widest uppercase">CBN</span>
+  //       <span className="text-[11px] font-medium opacity-70">Regulated</span>
+  //     </span>
+  //   ),
+  // },
   {
     node: (
       <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
@@ -40,24 +40,24 @@ const partners: LogoItem[] = [
       </span>
     ),
   },
+  // {
+  //   node: (
+  //     <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
+  //       <span className="text-[13px] font-bold tracking-widest uppercase">GTBank</span>
+  //     </span>
+  //   ),
+  // },
+  // {
+  //   node: (
+  //     <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
+  //       <span className="text-[13px] font-bold tracking-widest uppercase">Zenith</span>
+  //     </span>
+  //   ),
+  // },
   {
     node: (
       <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
-        <span className="text-[13px] font-bold tracking-widest uppercase">GTBank</span>
-      </span>
-    ),
-  },
-  {
-    node: (
-      <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
-        <span className="text-[13px] font-bold tracking-widest uppercase">Zenith</span>
-      </span>
-    ),
-  },
-  {
-    node: (
-      <span className="flex items-center gap-1.5 text-muted-foreground/60 transition-colors hover:text-muted-foreground">
-        <span className="text-[13px] font-bold tracking-widest uppercase">Access Bank</span>
+        <span className="text-[13px] font-bold tracking-widest uppercase">Wema Bank</span>
       </span>
     ),
   },

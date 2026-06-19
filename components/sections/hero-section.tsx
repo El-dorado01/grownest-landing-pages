@@ -143,7 +143,7 @@ export function HeroSection() {
                 ))}
               </div>
               <p className="text-[13px] text-muted-foreground">
-                <span className="font-bold text-foreground">50,000+</span> Africans
+                <span className="font-bold text-foreground">5,000+</span> Africans
                 already saving
               </p>
             </motion.div>
