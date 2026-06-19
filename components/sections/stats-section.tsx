@@ -41,7 +41,7 @@ function AnimatedNumber({ target, suffix = "" }: { target: number; suffix?: stri
 
 const stats = [
   { value: 5000, suffix: "+", label: "Active savers" },
-  { value: 2, suffix: "M+", label: "Naira saved", prefix: "₦" },
+  { value: 60, suffix: "M+", label: "Naira saved", prefix: "₦" },
   { value: 98, suffix: "%", label: "Customer satisfaction" },
   { value: 4, suffix: "+", label: "Savings products" },
 ]
