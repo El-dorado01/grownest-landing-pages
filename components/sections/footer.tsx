@@ -13,6 +13,7 @@ const footerLinks = {
     { label: "GroupNest", href: "/coming-soon?product=GroupNest" },
     { label: "NestBaskets", href: "/coming-soon?product=NestBaskets" },
     { label: "NestMarket", href: "/coming-soon?product=NestMarket" },
+    { label: "GrowNest.Africa Affiliate", href: "https://affiliate.grownest.africa" },
   ],
   Company: [
     { label: "About us", href: "#" },
@@ -28,10 +29,10 @@ const footerLinks = {
     { label: "Community", href: "#" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-    { label: "Security", href: "#" },
+    { label: "Privacy Policy", href: "https://dashboard.grownest.africa/privacy" },
+    { label: "Terms of Service", href: "https://dashboard.grownest.africa/terms" },
+    { label: "Cookie Policy", href: "https://dashboard.grownest.africa/cookies" },
+    { label: "Refund Policy", href: "https://dashboard.grownest.africa/refund-policy" },
   ],
   contact: [
     {label: "Km 13 DSC Express-Way, Opete Junction, Otokutu, Deleta State", href: "#" },
