@@ -135,7 +135,7 @@ export function HeroSection() {
                 className="flex flex-wrap items-center"
               >
                 <Link
-                  href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
+                  href="https://apps.apple.com/us/app/grownest-africa/id6786081175" target="_blank"
                   className="inline-flex transition-opacity hover:opacity-80"
                 >
                   <Image src={appleImage} alt="Get it on Apple Store" width={180} className="p-0 h-[52px]" />

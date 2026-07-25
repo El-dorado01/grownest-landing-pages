@@ -35,7 +35,7 @@ const footerLinks = {
     { label: "Refund Policy", href: "https://dashboard.grownest.africa/refund-policy" },
   ],
   contact: [
-    {label: "Km 13 DSC Express-Way, Opete Junction, Otokutu, Deleta State", href: "#" },
+    {label: "Km 13 DSC Express-Way, Opete Junction, Otokutu, Delta State", href: "#" },
     {label: "support@grownest.africa", href: "mailto:support@grownest.africa" },
     {label: "+234 705 329 0027", href: "tel:+2347053290027" }
   ]
