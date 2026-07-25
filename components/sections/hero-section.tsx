@@ -15,6 +15,7 @@ import {
 } from "@/lib/motion"
 import Link from "next/link"
 import googleImage from "../../assets/images/google_play_store_badge.png"
+import appleImage from "../../assets/images/app-store-badge.png"
 import avatar1 from "../../assets/images/avatar1.png"
 import avatar2 from "../../assets/images/avater2.png"
 import avatar3 from "../../assets/images/avater3.png"
@@ -112,22 +113,40 @@ export function HeroSection() {
             </motion.div>
 
             {/* App store badge */}
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-wrap items-center"
-            >
-              <Link
-                href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
-                className="inline-flex transition-opacity hover:opacity-80"
+            <div className="flex items-center gap-3 flex-wrap">
+              <motion.div
+                variants={fadeUp}
+                className="flex flex-wrap items-center"
               >
-                <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0 rounded-lg" />
-                {/* <Play size={14} />
-                <div className="text-left">
-                  <p className="text-[9px] leading-none opacity-70">Get it on</p>
-                  <p className="text-[13px] font-semibold leading-tight">Google Play</p>
-                </div> */}
-              </Link>
-            </motion.div>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
+                  className="inline-flex transition-opacity hover:opacity-80"
+                >
+                  <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0" />
+                  {/* <Play size={14} />
+                  <div className="text-left">
+                    <p className="text-[9px] leading-none opacity-70">Get it on</p>
+                    <p className="text-[13px] font-semibold leading-tight">Google Play</p>
+                  </div> */}
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={fadeUp}
+                className="flex flex-wrap items-center"
+              >
+                <Link
+                  href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
+                  className="inline-flex transition-opacity hover:opacity-80"
+                >
+                  <Image src={appleImage} alt="Get it on Apple Store" width={180} className="p-0 h-[52px]" />
+                  {/* <Play size={14} />
+                  <div className="text-left">
+                    <p className="text-[9px] leading-none opacity-70">Get it on</p>
+                    <p className="text-[13px] font-semibold leading-tight">Apple Store</p>
+                  </div> */}
+                </Link>
+              </motion.div>
+            </div>
 
             {/* Social proof */}
             <motion.div variants={fadeUp} className="flex items-center gap-3">
