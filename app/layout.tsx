@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "GrowNest",
   ],
   authors: [{ name: "GrowNest Team" }],
-  metadataBase: new URL("https://grownest.africa"),
+  metadataBase: new URL("https://app.grownest.africa"),
   icons: {
     icon: "/d_icon.png",
     shortcut: "/d_icon.png",
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://grownest.africa",
+    url: "https://app.grownest.africa",
     title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
     description:
       "Start your journey to financial freedom today. Save Smart. Shop Easy. Smile Always with GrowNest.",
     siteName: "GrowNest",
     images: [
       {
-        url: "/social-preview.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "GrowNest Wealth Growth",
+        url: "/open-graph.jpeg",
+        width: 1280,
+        height: 981,
+        alt: "GrowNest | Save Smart. Shop Easy. Smile Always.",
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
     description:
       "Africa's premier platform for financial prosperity. Save Smart. Shop Easy. Smile Always.",
-    images: ["/social-preview.jpeg"],
+    images: ["/open-graph.jpeg"],
   },
   robots: {
     index: true,
@@ -86,9 +86,7 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
