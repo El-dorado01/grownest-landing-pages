@@ -17,7 +17,7 @@ export default function Page() {
     <main className="min-h-screen overflow-x-hidden">
       <GlassNavbar />
       <HeroSection />
-      <LogoLoopSection />
+      {/* <LogoLoopSection /> */}
       <ProductsSection />
       <AppPreviewSection />
       <NestBasketsSection />
