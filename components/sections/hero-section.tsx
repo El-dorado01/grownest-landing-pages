@@ -26,7 +26,6 @@ const avatars = [avatar1, avatar2, avatar3, avatar4]
 export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-section-light pt-28 pb-16 md:pt-32 md:pb-24">
-
       {/* LightRays background */}
       <LightRays
         raysOrigin="top-center"
@@ -42,7 +41,7 @@ export function HeroSection() {
       {/* Subtle radial glow behind hero */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] opacity-40"
+        className="pointer-events-none absolute top-0 left-1/2 h-[600px] w-[900px] -translate-x-1/2 opacity-40"
         style={{
           background:
             "radial-gradient(ellipse at 50% 0%, rgba(212,160,23,0.18) 0%, transparent 70%)",
@@ -51,7 +50,6 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
-
           {/* ── Left: copy ─────────────────────────────────────── */}
           <motion.div
             variants={staggerContainer(0.12, 0)}
@@ -62,20 +60,20 @@ export function HeroSection() {
             {/* Eyebrow */}
             <motion.div variants={fadeUp} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#D4A017]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#D4A017]">
-                Africa&apos;s #1 savings platform
+              <span className="text-xs font-bold tracking-[0.12em] text-[#D4A017] uppercase">
+                NestBaskets by GrowNest
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-[42px] font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-[56px]"
+              className="text-[42px] leading-[1.15] font-bold tracking-tight text-foreground sm:text-5xl lg:text-[56px]"
             >
-              The smarter way to{" "}
+              Buy foodstuffs &amp; pay{" "}
               <span className="inline-flex overflow-hidden align-bottom">
                 <RotatingText
-                  texts={["save.", "grow.", "invest.", "thrive."]}
+                  texts={["small small.", "bit by bit.", "stress-free."]}
                   mainClassName="text-[#D4A017] inline-flex"
                   elementLevelClassName="gradient-gold-text"
                   rotationInterval={2400}
@@ -84,7 +82,6 @@ export function HeroSection() {
                   transition={{ type: "spring", damping: 22, stiffness: 220 }}
                 />
               </span>
-              {" "}in Africa.
             </motion.h1>
 
             {/* Sub-copy */}
@@ -92,8 +89,9 @@ export function HeroSection() {
               variants={fadeUp}
               className="max-w-md text-[16px] leading-relaxed text-muted-foreground"
             >
-              Achieve your financial goals with personal savings, group circles,
-              and smart basket plans — all in one place.
+              Shop quality groceries, rice &amp; staples online with flexible
+              food installment plans. Beat grocery inflation with doorstep
+              delivery, zero stress.
             </motion.p>
 
             {/* CTA row */}
@@ -101,7 +99,12 @@ export function HeroSection() {
               variants={fadeUp}
               className="flex flex-wrap items-center gap-3"
             >
-              <Button variant="gradient" size="default" className="gap-2" asChild>
+              <Button
+                variant="gradient"
+                size="default"
+                className="gap-2"
+                asChild
+              >
                 <Link href="https://dashboard.grownest.africa/signup">
                   Get started free
                   <ArrowRight size={16} />
@@ -113,16 +116,23 @@ export function HeroSection() {
             </motion.div>
 
             {/* App store badge */}
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex flex-wrap items-center gap-3">
               <motion.div
                 variants={fadeUp}
                 className="flex flex-wrap items-center"
               >
                 <Link
-                  href="https://play.google.com/store/apps/details?id=grownest.com.grownest" target="_blank"
+                  href="https://play.google.com/store/apps/details?id=grownest.com.grownest"
+                  target="_blank"
                   className="inline-flex transition-opacity hover:opacity-80"
                 >
-                  <Image src={googleImage} alt="Get it on Google Play" width={180} height={52} className="p-0" />
+                  <Image
+                    src={googleImage}
+                    alt="Get it on Google Play"
+                    width={180}
+                    height={52}
+                    className="p-0"
+                  />
                   {/* <Play size={14} />
                   <div className="text-left">
                     <p className="text-[9px] leading-none opacity-70">Get it on</p>
@@ -135,10 +145,16 @@ export function HeroSection() {
                 className="flex flex-wrap items-center"
               >
                 <Link
-                  href="https://apps.apple.com/us/app/grownest-africa/id6786081175" target="_blank"
+                  href="https://apps.apple.com/us/app/grownest-africa/id6786081175"
+                  target="_blank"
                   className="inline-flex transition-opacity hover:opacity-80"
                 >
-                  <Image src={appleImage} alt="Get it on Apple Store" width={180} className="p-0 h-[52px]" />
+                  <Image
+                    src={appleImage}
+                    alt="Get it on Apple Store"
+                    width={180}
+                    className="h-[52px] p-0"
+                  />
                   {/* <Play size={14} />
                   <div className="text-left">
                     <p className="text-[9px] leading-none opacity-70">Get it on</p>
@@ -154,16 +170,21 @@ export function HeroSection() {
                 {avatars.map((avatar, i) => (
                   <div
                     key={i}
-                    className="relative h-8 w-8 rounded-full border-2 border-section-light overflow-hidden"
+                    className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-section-light"
                     style={{ zIndex: avatars.length - i }}
                   >
-                    <Image src={avatar} alt={`GrowNest user ${i + 1}`} fill className="object-cover" />
+                    <Image
+                      src={avatar}
+                      alt={`GrowNest user ${i + 1}`}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
               <p className="text-[13px] text-muted-foreground">
-                <span className="font-bold text-foreground">5,000+</span> Africans
-                already saving
+                <span className="font-bold text-foreground">5,000+</span>{" "}
+                Africans already saving
               </p>
             </motion.div>
           </motion.div>
@@ -182,29 +203,28 @@ export function HeroSection() {
                   src="/images/hero-lifestyle-re.jpeg"
                   alt="Woman with GrowNest groceries — your food, your way"
                   fill
-                  className="object-cover object-top rounded-[32px] h-full"
+                  className="h-full rounded-[32px] object-cover object-top"
                   priority
                 />
               </div>
 
-              <div className="absolute -left-2 top-12 sm:-left-5">
+              <div className="absolute top-12 -left-2 sm:-left-5">
                 <FloatingCard variant="balance" delay={0} />
               </div>
-              <div className="absolute -right-2 top-1/2 -translate-y-1/2 sm:-right-5">
+              <div className="absolute top-1/2 -right-2 -translate-y-1/2 sm:-right-5">
                 <FloatingCard variant="savings" delay={0.5} />
               </div>
-              <div className="absolute -left-2 bottom-12 sm:-left-5">
+              <div className="absolute bottom-12 -left-2 sm:-left-5">
                 <FloatingCard variant="goal" delay={1.0} />
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-section-light to-transparent"
+        className="pointer-events-none absolute right-0 bottom-0 left-0 h-16 bg-gradient-to-t from-section-light to-transparent"
       />
     </section>
   )

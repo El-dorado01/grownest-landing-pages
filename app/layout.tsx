@@ -16,14 +16,21 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
+  title: "Buy Foodstuffs & Pay Small Small | Nestbaskets by GrowNest",
   description:
-    "Save Smart. Shop Easy. Smile Always. Join GrowNest, Africa's premier platform for financial prosperity and sustainable wealth growth.",
+    "Shop quality groceries, rice & staples online and pay small small. Flexible food installment plans, Beat grocery inflation with GrowNest.Africa, Doorstep delivery. Zero stress.",
   keywords: [
+    "buy foodstuffs online",
+    "pay small small groceries",
+    "food basket subscription",
+    "food baskets Nigeria",
+    "grocery installment plan",
+    "grocery subscription Africa",
+    "NestBaskets",
+    "savings plan Africa",
     "wealth growth",
     "savings",
     "investment",
-    "Africa",
     "financial prosperity",
     "GrowNest",
   ],
@@ -38,24 +45,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://app.grownest.africa",
-    title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
+    title: "Buy Foodstuffs & Pay Small Small | Nestbaskets by GrowNest",
     description:
-      "Start your journey to financial freedom today. Save Smart. Shop Easy. Smile Always with GrowNest.",
+      "Shop quality groceries, rice & staples online and pay small small. Flexible food installment plans, Beat grocery inflation with GrowNest.Africa, Doorstep delivery. Zero stress.",
     siteName: "GrowNest",
     images: [
       {
         url: "/open-graph.jpeg",
         width: 1280,
         height: 981,
-        alt: "GrowNest | Save Smart. Shop Easy. Smile Always.",
+        alt: "Buy Foodstuffs & Pay Small Small | Nestbaskets by GrowNest",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrowNest | Save Smart. Shop Easy. Smile Always.",
+    title: "Buy Foodstuffs & Pay Small Small | Nestbaskets by GrowNest",
     description:
-      "Africa's premier platform for financial prosperity. Save Smart. Shop Easy. Smile Always.",
+      "Shop quality groceries, rice & staples online and pay small small. Flexible food installment plans, Beat grocery inflation with GrowNest.Africa, Doorstep delivery. Zero stress.",
     images: ["/open-graph.jpeg"],
   },
   robots: {
@@ -69,6 +76,27 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+}
+
+// Structured data (JSON-LD) — gives Google explicit, machine-readable facts
+// about who GrowNest is, separate from what's written for human readers.
+// Organization covers brand identity; WebSite + SearchAction is what can
+// unlock a sitelinks search box directly in Google's results.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "GrowNest",
+  url: "https://app.grownest.africa",
+  logo: "https://app.grownest.africa/d_icon.png",
+  description:
+    "GrowNest lets you buy foodstuffs and pay small small — flexible food installment plans (NestBaskets) with doorstep delivery, plus savings plans for Africans.",
+}
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "GrowNest",
+  url: "https://app.grownest.africa",
 }
 
 export default function RootLayout({
@@ -88,6 +116,16 @@ export default function RootLayout({
         spaceGroteskHeading.variable
       )}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
